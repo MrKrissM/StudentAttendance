@@ -1,0 +1,29 @@
+Configuracion Ntt Framework 
+
+copiar archivo docker-compose.yml en raiz del proyecto
+
+Visual Studio codec 
+Docker Compose
+SQL Server Management
+dotnet add package Microsoft.EntityFrameworkCore 
+
+en visual ejecutar los comandos:
+
+docker-compose up --build -d
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools  
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet tool install --global dotnet-aspnet-codegenerator
+
+dotnet tool install --global dotnet-ef
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+
+Crear Scaffolding:
+dotnet aspnet-codegenerator controller -name StudentController -m Student -dc StudentAttendanceContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+
+dotnet aspnet-codegenerator controller -name AttendanceController -m Attendance -dc StudentAttendanceContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+
+dotnet ef migrations add UpdateAuthorBookRelation
+

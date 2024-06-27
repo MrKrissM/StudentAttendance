@@ -59,14 +59,13 @@ namespace StudentAttendance.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("AttendanceId,Date,IsPresent,StudentId")] Attendance attendance)
         {
-            if (ModelState.IsValid)
-            {
+            
                 _context.Add(attendance);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId", attendance.StudentId);
-            return View(attendance);
+            
+            // ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId", attendance.StudentId);
+            // return View(attendance);
         }
 
         // GET: Attendance/Edit/5
