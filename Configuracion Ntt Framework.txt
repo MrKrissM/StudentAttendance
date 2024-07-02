@@ -9,6 +9,8 @@ dotnet add package Microsoft.EntityFrameworkCore
 
 en visual ejecutar los comandos:
 
+dotnet new mvc -n nombreProyecto
+cd nombreProyecto
 docker-compose up --build -d
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add package Microsoft.EntityFrameworkCore.Tools  
